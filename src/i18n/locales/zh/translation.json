@@ -1,0 +1,10 @@
+{
+  "buttons": {
+    "primary": "按钮1"
+  },
+  "menu": {
+    "about": "关于",
+    "home": "主页"
+  },
+  "welcome": "欢迎"
+}

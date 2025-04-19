@@ -1,0 +1,8 @@
+{
+  "welcome": "Welcome",
+  "buttons": {
+    "primary": "Primary Button1",
+    "default": "Default Button2",
+    "dashed": "Dashed Button"
+  }
+}

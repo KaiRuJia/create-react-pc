@@ -1,0 +1,8 @@
+{
+  "welcome": "欢迎使用",
+  "buttons": {
+    "primary": "主要按钮1",
+    "default": "默认按钮1",
+    "dashed": "虚线按钮1"
+  }
+}

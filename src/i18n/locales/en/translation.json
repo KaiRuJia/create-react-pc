@@ -1,0 +1,10 @@
+{
+  "buttons": {
+    "primary": "primary"
+  },
+  "menu": {
+    "about": "about",
+    "home": "home"
+  },
+  "welcome": "welcome"
+}
