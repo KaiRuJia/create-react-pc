@@ -1,0 +1,96 @@
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6c5ce7, #a363d9);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .number {
+      font-size: 120px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .planet {
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+      animation: rotate 20s linear infinite;
+    }
+  }
+
+  .message {
+    color: #fff;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+  }
+
+  .back-button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #ffa502;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ff9f0d;
+      transform: translateY(-2px);
+    }
+  }
+
+  .clouds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    opacity: 0.6;
+    animation: moveClouds 60s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveClouds {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1920px 0;
+  }
+} 

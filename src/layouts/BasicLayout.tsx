@@ -1,4 +1,4 @@
-import { Layout, Menu, Select } from 'antd'
+import { Layout, Menu, Select, Button } from 'antd'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import BreadcrumbComponent from '../components/Breadcrumb'
@@ -11,6 +11,13 @@ const BasicLayout = () => {
 
   const handleLanguageChange = (value: string) => {
     i18n.changeLanguage(value)
+  }
+
+  const handleLogout = () => {
+    // 清除本地存储的 token
+    localStorage.removeItem('token')
+    // 跳转到登录页面
+    navigate('/login')
   }
 
   const menuItems = [
@@ -52,6 +59,9 @@ const BasicLayout = () => {
               { value: 'en', label: 'English' }
             ]}
           />
+          <Button style={{ marginLeft: 16 }} onClick={handleLogout}>
+            退出登录
+          </Button>
         </Header>
         <div 
             style={{ 
