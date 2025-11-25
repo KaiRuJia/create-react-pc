@@ -28,7 +28,8 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"]
-    }
+    },
+    "types": ["react-pdf", "node"] // 显式声明 react-pdf 类型
   },
   "include": [
     "src"

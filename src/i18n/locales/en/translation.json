@@ -4,7 +4,8 @@
   },
   "menu": {
     "about": "about",
-    "home": "home"
+    "home": "home",
+    "pdf": "引用溯源demo"
   },
   "welcome": "welcome"
 }

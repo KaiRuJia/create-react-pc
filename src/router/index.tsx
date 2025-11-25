@@ -4,6 +4,7 @@ import LoginPage from 'src/components/LoginPage'
 import NotFound from 'src/components/NotFound'
 import Home from 'src/pages/Home'
 import About from 'src/pages/About'
+import PDFViewer from 'src/pages/pdf'
 
 // 检查是否登录的函数
 const isAuthenticated = () => {
@@ -33,6 +34,7 @@ const App = () => {
           <Route path='/' element={<Navigate to='/home' />}/>
           <Route path='/home' element={<Home/>} index={true} />
           <Route path='/about' element={<About/>}/>
+          <Route path='/pdf' element={<PDFViewer/>}/>
         </Route>
         <Route path='*' element={<NotFound />}/>
       </Routes>

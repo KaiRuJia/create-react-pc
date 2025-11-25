@@ -1,5 +1,5 @@
 import { Layout, Menu, Select, Button } from 'antd'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import BreadcrumbComponent from '../components/Breadcrumb'
 
@@ -7,6 +7,7 @@ const { Header, Content, Sider } = Layout
 
 const BasicLayout = () => {
   const navigate = useNavigate()
+  const location = useLocation()
   const { t, i18n } = useTranslation()
 
   const handleLanguageChange = (value: string) => {
@@ -28,7 +29,11 @@ const BasicLayout = () => {
     {
       key: '/about',
       label: t('menu.about')
-    }
+    },
+    {
+      key: '/pdf',
+      label: t('menu.pdf')
+    },
   ]
 
   return (
@@ -38,7 +43,7 @@ const BasicLayout = () => {
         <Menu
           theme='dark'
           mode='inline'
-          defaultSelectedKeys={['/']}
+          selectedKeys={[location.pathname]}
           items={menuItems}
           onClick={({ key }) => navigate(key)}
         />
@@ -71,7 +76,7 @@ const BasicLayout = () => {
             alignItems: 'center' 
             }}
         ><BreadcrumbComponent /></div>
-        <Content style={{ margin: '0px 16px 24px 16px', padding: 24, background: '#fff' }}>
+        <Content style={{ margin: '0px 16px 24px 16px', padding: 24, background: '#fff', overflow: 'auto', height: 'calc(100vh - 180px)' }}>
           <div style={{ marginTop: 16 }}>
             <Outlet />
           </div>

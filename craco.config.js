@@ -6,8 +6,15 @@ module.exports = {
     {
       plugin: CracoLessPlugin,
       options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            javascriptEnabled: true
+          }
+        },
         cssLoaderOptions: {
           modules: {
+            mode: 'local',
+            auto: (resourcePath) => resourcePath.includes('module.less'),
             localIdentName: '[local]_[hash:base64:5]'
           }
         }
