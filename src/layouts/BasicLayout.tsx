@@ -34,6 +34,10 @@ const BasicLayout = () => {
       key: '/pdf',
       label: t('menu.pdf')
     },
+    {
+      key: '/chat',
+      label: 'AI 聊天'
+    },
   ]
 
   return (
