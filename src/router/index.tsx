@@ -6,6 +6,7 @@ import Home from 'src/pages/Home'
 import About from 'src/pages/About'
 import PDFViewer from 'src/pages/pdf'
 import ChatPage from 'src/pages/ChatPage'
+import RTK from 'src/pages/reduxToolKit'
 
 // 检查是否登录的函数
 const isAuthenticated = () => {
@@ -37,6 +38,7 @@ const App = () => {
           <Route path='/about' element={<About/>}/>
           <Route path='/pdf' element={<PDFViewer/>}/>
           <Route path='/chat' element={<ChatPage/>}/>
+          <Route path='/rtk' element={<RTK/>}/>
         </Route>
         <Route path='*' element={<NotFound />}/>
       </Routes>

@@ -38,6 +38,10 @@ const BasicLayout = () => {
       key: '/chat',
       label: 'AI 聊天'
     },
+    {
+      key: '/rtk',
+      label: 'reduxToolKit'
+    },
   ]
 
   return (
