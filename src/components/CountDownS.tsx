@@ -3,7 +3,7 @@ import { Button, Space } from 'antd'
 import _ from 'lodash'
 
 const initCount = 60
-const CountDown = () => {
+const CountDownS = () => {
   const [count, setCount] = useState<number>(initCount)
   const [isRun, setIsRun] = useState<boolean>(false)
   const timerRef = useRef<number | null>(null)
@@ -46,4 +46,4 @@ const CountDown = () => {
   )
 }
 
-export default CountDown
+export default CountDownS
