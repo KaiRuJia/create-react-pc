@@ -29,7 +29,7 @@ const buildTime = formatDateToYYYYMMDDHHmmss()
 const timestamp = formatDateToYYYYMMDDHHmmss()
 
 const versionInfo = {
-  version: `${version}-${timestamp}`,
+  version: `${version}-${commit}-${timestamp}`,
   commit,
   branch,
   buildTime,

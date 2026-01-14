@@ -7,7 +7,7 @@ import About from 'src/pages/About'
 import PDFViewer from 'src/pages/pdf'
 import ChatPage from 'src/pages/ChatPage'
 import RTK from 'src/pages/reduxToolKit'
-// import { startVersionCheck } from 'src/utils/versionChecker'
+import { startVersionCheck } from 'src/utils/versionChecker'
 
 // 检查是否登录的函数
 const isAuthenticated = () => {
@@ -22,7 +22,7 @@ const PrivateRoute = ({ children }: { children: React.ReactElement }) => {
 }
 
 // 在 App 入口调用
-// startVersionCheck()
+startVersionCheck()
 
 const App = () => {
   return (
