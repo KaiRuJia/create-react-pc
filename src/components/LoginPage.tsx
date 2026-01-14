@@ -1,4 +1,3 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import request from '../utils/request'
 import { Form, Input, Button, Checkbox } from 'antd'

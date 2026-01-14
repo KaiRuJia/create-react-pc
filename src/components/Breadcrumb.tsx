@@ -6,13 +6,13 @@ const BreadcrumbComponent = () => {
   const location = useLocation()
   const { t } = useTranslation()
   
-  const pathSnippets = location.pathname.split('/').filter(i => i)
+  const pathSnippets = location.pathname.split('/').filter((i: any) => i)
   
   const breadcrumbItems = [
     {
       title: <Link to='/'>{t('menu.home')}</Link>
     },
-    ...pathSnippets.map((_, index) => {
+    ...pathSnippets.map((_: any, index: number) => {
       const url = `/${pathSnippets.slice(0, index + 1).join('/')}`
       const key = pathSnippets[index]
       return {

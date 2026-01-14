@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import _ from 'lodash'
 
 const CountDownHMS = ({ endTime }: { endTime: string }) => {
   const [count, setCount] = useState<number>(() => {
@@ -11,11 +10,10 @@ const CountDownHMS = ({ endTime }: { endTime: string }) => {
   })
   const timerRef = useRef<number | null>(null)
 
-
   useEffect(() => {
     timerRef.current && window.clearInterval(timerRef.current)
     timerRef.current = window.setInterval(() => {
-      setCount(pre => {
+      setCount((pre: any) => {
         if (pre <= 0) {
           timerRef.current && window.clearInterval(timerRef.current)
           return pre
@@ -35,9 +33,7 @@ const CountDownHMS = ({ endTime }: { endTime: string }) => {
     return [h, m, s].map((v) => v.toString().padStart(2, '0')).join(':')
   }
   return (
-    <>
-      <h1>倒计时：{formatTime(count)}</h1>
-    </>
+    <h1>倒计时：{formatTime(count)}</h1>
   )
 }
 

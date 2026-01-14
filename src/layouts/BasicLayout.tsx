@@ -53,7 +53,7 @@ const BasicLayout = () => {
           mode='inline'
           selectedKeys={[location.pathname]}
           items={menuItems}
-          onClick={({ key }) => navigate(key)}
+          onClick={({ key }: any) => navigate(key)}
         />
       </Sider>
       <Layout>

@@ -1,8 +1,8 @@
-import axios from 'axios'
+// import axios from 'axios'
 
 // DeepSeek API 配置
 const DEEPSEEK_API_KEY = 'sk-676648b275784f42aa068ad8506d3d9a'
-const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions'
+// const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions'
 
 /**
  * 调用 DeepSeek API 进行流式响应

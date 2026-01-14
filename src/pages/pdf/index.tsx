@@ -18,7 +18,7 @@ interface PDFReference {
   createTime?: string;
 }
 
-const PDFViewer: React.FC = () => {
+const PDFViewer = () => {
   const [numPages, setNumPages] = useState<number | null>(null)
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [scale, setScale] = useState<number>(1)
@@ -106,7 +106,7 @@ const PDFViewer: React.FC = () => {
     if (pdfDisplayRef.current && pageRefs.current[ref.pageNumber - 1]) {
       const pageElement = pageRefs.current[ref.pageNumber - 1]
       if (pageElement) {
-        const pageRect = pageElement.getBoundingClientRect()
+        // const pageRect = pageElement.getBoundingClientRect()
         const viewerRect = pdfDisplayRef.current?.getBoundingClientRect()
         
         if (viewerRect) {

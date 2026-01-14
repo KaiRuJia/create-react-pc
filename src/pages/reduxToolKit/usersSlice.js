@@ -1,6 +1,6 @@
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { fetchUsersApi, createUserApi, deleteUserApi } from './userService'
+import { fetchUsersApi, createUserApi/**, deleteUserApi */ } from './userService'
 // 🌟 异步 Thunk：获取用户列表
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
@@ -31,7 +31,7 @@ export const deleteUser = createAsyncThunk(
   'users/deleteUser',
   async(userId, { rejectWithValue }) => {
     try {
-      const newUser = await deleteUserApi(userId)
+      // const newUser = await deleteUserApi(userId)
       return userId
     } catch (error) {
       return rejectWithValue(error.message || 'Failed to create user')
@@ -86,7 +86,7 @@ const usersSlice = createSlice({
       state.loading = false
       state.items = state.items.filter(user => user.id !== action.payload)
     })
-    .addCase(deleteUser.rejected, (state, action) => {
+    .addCase(deleteUser.rejected, (state) => {
       state.loading = false
     }) 
   }

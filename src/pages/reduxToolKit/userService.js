@@ -15,6 +15,6 @@ export const createUserApi = async (userData) => {
    }
 }
 
-export const deleteUserApi = async (userId) => {
+export const deleteUserApi = async () => {
   await delay(200)
 }

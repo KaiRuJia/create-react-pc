@@ -1,2 +1,6 @@
 declare module 'craco-less'
 declare module 'react-pdf'
+// declare module 'react'
+declare module 'react-i18next'
+declare module 'antd'
+declare module 'react-router-dom'

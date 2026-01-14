@@ -118,7 +118,7 @@ const ChatPage: React.FC = () => {
       <div className='chat-messages'>
         <List
           dataSource={messages}
-          renderItem={(message) => (
+          renderItem={(message: any) => (
             <List.Item className={`message-item ${message.role}`}>
               <List.Item.Meta
                 avatar={
@@ -160,7 +160,7 @@ const ChatPage: React.FC = () => {
       <div className='chat-input-container'>
         <TextArea
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e: any) => setInputValue(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder='输入您的问题...'
           rows={4}
