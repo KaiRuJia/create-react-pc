@@ -1,0 +1,52 @@
+name: Build and Generate Version
+
+# 触发条件：当推送到 main 分支，或 PR 到 main 时
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 使用 Ubuntu 虚拟机
+
+    steps:
+      # 1. 检出代码（必须！）
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 👈 关键！拉取完整 Git 历史（含 tags）
+
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'  # 自动缓存 node_modules
+          registry-url: 'https://registry.npmmirror.com'
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. 生成 version.json（关键步骤！）
+      - name: Generate version.json
+        run: npm run gen-version
+
+      # 5. 构建项目（假设你的构建命令是 npm run build）
+      - name: Build project
+        run: npm run build
+
+      # 6. 上传构建产物供下载
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: ./build
+      # 在 部署
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
