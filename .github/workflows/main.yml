@@ -10,6 +10,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest  # 使用 Ubuntu 虚拟机
+    # 👇 关键：授予 contents: write 权限
+    permissions:
+      contents: write  # 允许 push / create tags 等
+      # 如果还用到 Pages，加上：
+      pages: write
+      id-token: write
 
     steps:
       # 1. 检出代码（必须！）
@@ -17,6 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # 👈 关键！拉取完整 Git 历史（含 tags）
+          token: ${{ secrets.GITHUB_TOKEN }}  # 默认就是它，可省略
 
       # 2. 设置 Node.js 环境
       - name: Setup Node.js
