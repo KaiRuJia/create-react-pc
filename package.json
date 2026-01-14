@@ -32,12 +32,13 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "npm run gen-version && craco build",
     "test": "craco test",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "i18n-scan": "i18next-scanner --config i18n-scanner.config.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "gen-version": "node scripts/generate-version.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
